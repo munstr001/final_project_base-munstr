@@ -25,3 +25,15 @@ def recommend_items(material_id, sim_df, top_k=3):
         .index
         .tolist()
     )
+
+def recommend_for_student(student_id, ratings, sim_df, top_k=3):
+    student_items = ratings[ratings["student_id"] == student_id]["material_id"].tolist()
+
+    scores = {}
+    for item in student_items:
+        for similar_item, score in sim_df[item].items():
+            if similar_item not in student_items:
+                scores[similar_item] = scores.get(similar_item, 0) + score
+
+    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    return ranked[:top_k]
