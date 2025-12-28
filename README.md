@@ -53,28 +53,48 @@
 
 ## 🏗 Project Structure
 
-.
-├── src/
-│ ├── recommender/
-│ │ ├── collaborative.py
-│ │ ├── content_based.py
-│ │ ├── hybrid.py
-│ │ └── metrics.py
-│ └── api/
-│ └── app.py
-├── tests/
-│ └── test_collaborative.py
+```text
+FINAL_PROJECT_BASE-MUNSTR/
+├── .github/
+│   └── workflows/
+│       ├── retrain.yml
+│       └── tests.yml
+│
 ├── data/
-│ ├── ratings.csv
-│ └── materials.csv
+│   ├── materials.csv
+│   └── ratings.csv
+│
 ├── models/
+│
 ├── reports/
-├── .github/workflows/
-│ ├── tests.yml
-│ └── retrain.yml
+│
+├── scripts/
+│   └── retrain.py
+│
+├── src/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── app.py
+│   │
+│   ├── recommender/
+│   │   ├── __init__.py
+│   │   ├── collaborative.py
+│   │   ├── content_based.py
+│   │   ├── hybrid.py
+│   │   └── metrics.py
+│   │
+│   ├── __init__.py
+│   └── main.py
+│
+├── tests/
+│   └── test_collaborative.py
+│
+├── .gitignore
+├── LICENSE
+├── pytest.ini
 ├── README.md
-├── requirements.txt
-└── .gitignore
+└── requirements.txt
+```
 
 ---
 
