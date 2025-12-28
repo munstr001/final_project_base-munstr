@@ -49,6 +49,10 @@
 
 Метрики автоматически пересчитываются в CI/CD workflow и сохраняются как artifacts.
 
+The retraining workflow is executed automatically on a schedule
+and stores trained models and evaluation metrics as downloadable artifacts
+in GitHub Actions.
+
 ---
 
 ## 🏗 Project Structure
@@ -116,7 +120,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage
+## 🚀 Usage & Examples
 
 ### Run API locally
 
@@ -165,4 +169,16 @@ pytest
 Tests are automatically executed in CI/CD on every push and pull request.
 
 ---
+
+## 🔁 CI/CD Automation
+
+The project uses GitHub Actions for continuous integration and automation.
+
+Implemented workflows:
+- **tests.yml** — runs unit tests on every push and pull request
+- **retrain.yml** — scheduled workflow that retrains the recommendation model
+  and uploads trained models and metrics as artifacts
+
+All workflows must complete successfully for the project to be considered valid.
+
 
